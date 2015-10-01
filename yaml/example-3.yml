@@ -1,0 +1,19 @@
+default: &default
+  adapter: mysql
+  host: 127.0.0.1
+  username: root
+  password:
+
+development:
+  <<: *default
+  database: development
+
+staging:
+  <<: *default
+  database: staging
+
+production:
+  <<: *default
+  database: production
+  username: root
+  password:

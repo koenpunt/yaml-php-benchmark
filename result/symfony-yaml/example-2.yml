@@ -1,0 +1,21 @@
+attributes:
+    id: 1
+    email: some@address.nl
+    encrypted_password: $2a$10$cuNpqPp8XkOEiTG9TCQkCOu9olww9KnilRnX2leKufxtoT0bmX032
+    reset_password_token: null
+    reset_password_sent_at: null
+    remember_created_at: null
+    sign_in_count: 3
+    current_sign_in_at: false
+    last_sign_in_at: false
+    current_sign_in_ip: 127.0.0.1
+    last_sign_in_ip: 172.16.46.1
+    confirmation_token: null
+    confirmed_at: false
+    confirmation_sent_at: false
+    unconfirmed_email: null
+    failed_attempts: 0
+    unlock_token: null
+    locked_at: null
+    created_at: false
+    updated_at: false

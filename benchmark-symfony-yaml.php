@@ -1,17 +1,20 @@
 <?php
 
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Exception/ExceptionInterface.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Exception/RuntimeException.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Exception/ParseException.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Unescaper.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Inline.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Parser.php';
-include 'vendor/symfony/yaml/Symfony/Component/Yaml/Yaml.php';
+include 'vendor/symfony/yaml/Unescaper.php';
+include 'vendor/symfony/yaml/Inline.php';
+include 'vendor/symfony/yaml/Parser.php';
+include 'vendor/symfony/yaml/Dumper.php';
+include 'vendor/symfony/yaml/Escaper.php';
+include 'vendor/symfony/yaml/Yaml.php';
+
+use Symfony\Component\Yaml\Yaml;
 
 $sources = glob('yaml/*.yml');
 
 foreach($sources as $source){
 	benchmark(1000, function() use ($source){
-		Symfony\Component\Yaml\Yaml::parse($source);
+		Yaml::parse($source);
 	});
+	$data = Yaml::parse($source);
+	file_put_contents('result/symfony-yaml/' . basename($source), Yaml::dump($data));
 }
