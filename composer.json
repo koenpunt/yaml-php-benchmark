@@ -1,6 +1,6 @@
 {
     "require": {
-        "symfony/yaml": "2.*",
+        "symfony/yaml": "*",
         "mustangostang/spyc": "*"
     }
 }

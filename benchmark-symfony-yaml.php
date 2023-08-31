@@ -13,8 +13,8 @@ $sources = glob('yaml/*.yml');
 
 foreach($sources as $source){
 	benchmark(1000, function() use ($source){
-		Yaml::parse($source);
+		Yaml::parse(file_get_contents($source));
 	});
-	$data = Yaml::parse($source);
+	$data = Yaml::parse(file_get_contents($source));
 	file_put_contents('result/symfony-yaml/' . basename($source), Yaml::dump($data));
 }
